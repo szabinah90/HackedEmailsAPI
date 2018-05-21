@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<h1>Check your address</h1>
+<form method="post" th:action="@{/hacked-emails/}" action="#" th:object="${email}">
+    <label>Enter an e-mail address: </label>
+    <input type="text" th:field="*{address}">
+    <p><input type="submit" value="Submit" /></p>
+</form>
+</body>
+</html>

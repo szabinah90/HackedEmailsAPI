@@ -1,0 +1,59 @@
+{
+  "doc": {
+    "properties": {
+      "status": {
+        "type": "text"
+      },
+      "query": {
+        "type": "keyword"
+      },
+      "results": {
+        "type": "long"
+      },
+      "data": {
+        "type": "nested",
+        "properties": {
+          "source_id": {
+            "type": "text"
+          },
+          "source_url": {
+            "type": "text"
+          },
+          "source_lines": {
+            "type": "long"
+          },
+          "source_size": {
+            "type": "long"
+          },
+          "source_network": {
+            "type": "text"
+          },
+          "source_provider": {
+            "type": "text"
+          },
+          "verified": {
+            "type": "boolean"
+          },
+          "title": {
+            "type": "text"
+          },
+          "author": {
+            "type": "text"
+          },
+          "date_created": {
+            "type": "date"
+          },
+          "date_leaked": {
+            "type": "date"
+          },
+          "emails_count": {
+            "type": "long"
+          },
+          "details": {
+            "type": "text"
+          }
+        }
+      }
+    }
+  }
+}
