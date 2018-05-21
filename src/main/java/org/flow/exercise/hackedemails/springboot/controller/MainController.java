@@ -29,4 +29,12 @@ public class MainController {
         model.addAttribute("hackerresponse", object);
         return "result";
     }
+
+    @GetMapping(path = "/{address}")
+    public String getResults(@ModelAttribute EmailObject emailObject, Model model) {
+        HackedApiResponse object = hackedEmailsDAO.getStoredResultsByEmail(emailObject.getAddress());
+        model.addAttribute("hackerresponse", object);
+        return "result";
+    }
+
 }
