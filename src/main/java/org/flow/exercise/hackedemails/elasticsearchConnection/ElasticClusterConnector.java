@@ -28,7 +28,7 @@ public class ElasticClusterConnector {
         String mappingFilePath = classLoader.getResource("elasticMap.json").getFile();
         String mappingFile = myFileReader.readFromFile(mappingFilePath);
 
-        CreateIndexRequest request = new CreateIndexRequest("hacked_emails");
+        CreateIndexRequest request = new CreateIndexRequest("have_i_been_pwned");
         request.mapping("doc", mappingFile, XContentType.JSON);
 
         try {
@@ -40,10 +40,10 @@ public class ElasticClusterConnector {
         System.out.println("Index created.");
     }
 
-    public void uploadingDocuments(String response) {
+    public void uploadingDocuments(String response, String email) {
 
         RestHighLevelClient client = establishConnection();
-        IndexRequest request = new IndexRequest("hacked_emails", "doc");
+        IndexRequest request = new IndexRequest("have_i_been_pwned", "doc", email);
 
         try {
             client.index(request.source(response, XContentType.JSON));

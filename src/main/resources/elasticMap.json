@@ -1,56 +1,56 @@
 {
   "doc": {
     "properties": {
-      "status": {
-        "type": "text"
-      },
-      "query": {
-        "type": "keyword"
-      },
-      "results": {
-        "type": "long"
-      },
-      "data": {
+      "responseList" : {
         "type": "nested",
         "properties": {
-          "source_id": {
+          "Title": {
+            "type": "keyword"
+          },
+          "Name": {
             "type": "text"
           },
-          "source_url": {
+          "Domain": {
             "type": "text"
           },
-          "source_lines": {
+          "BreachDate": {
+            "type": "date"
+          },
+          "AddedDate": {
+            "type": "date"
+          },
+          "ModifiedDate": {
+            "type": "date"
+          },
+          "PwnCount": {
             "type": "long"
           },
-          "source_size": {
-            "type": "long"
-          },
-          "source_network": {
+          "Description": {
             "type": "text"
           },
-          "source_provider": {
+          "DataClasses": {
             "type": "text"
           },
-          "verified": {
+          "IsVerified": {
             "type": "boolean"
           },
-          "title": {
-            "type": "text"
+          "IsFabricated": {
+            "type": "boolean"
           },
-          "author": {
-            "type": "text"
+          "IsSensitive": {
+            "type": "boolean"
           },
-          "date_created": {
-            "type": "date"
+          "IsActive": {
+            "type": "boolean"
           },
-          "date_leaked": {
-            "type": "date"
+          "IsRetired": {
+            "type": "boolean"
           },
-          "emails_count": {
-            "type": "long"
+          "IsSpamList": {
+            "type": "boolean"
           },
-          "details": {
-            "type": "text"
+          "LogoType": {
+            "type": "string"
           }
         }
       }

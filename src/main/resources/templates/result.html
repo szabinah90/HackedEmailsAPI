@@ -6,29 +6,31 @@
 </head>
 <body>
 <h1>Results:</h1>
-<p th:inline="text">Status: [[${hackerresponse.status}]]</p>
-<p th:inline="text">Query: [[${hackerresponse.query}]]</p>
-<p th:inline="text">Results: [[${hackerresponse.results}]]</p>
-<ol>
-    <th:block th:each="data : ${hackerresponse.data}">
-        <li th:inline="text">Source ID: [[${data.source_id}]]</li>
+    <th:block th:each="data : ${pwnresponse.responseList}">
         <ul>
-            <li th:inline="text">Source URL: [[${data.source_url}]]</li>
-            <li th:inline="text">Source Lines: [[${data.source_lines}]]</li>
-            <li th:inline="text">Source Size: [[${data.source_size}]]</li>
-            <li th:inline="text">Source Network: [[${data.source_network}]]</li>
-            <li th:inline="text">Source Provider: [[${data.source_provider}]]</li>
-            <li th:inline="text">Verified: [[${data.verified}]]</li>
             <li th:inline="text">Title: [[${data.title}]]</li>
-            <li th:inline="text">Author: [[${data.author}]]</li>
-            <li th:inline="text">Date Created: [[${data.date_created}]]</li>
-            <li th:inline="text">Date Leaked: [[${data.date_leaked}]]</li>
-            <li th:inline="text">Emails count: [[${data.emails_count}]]</li>
-            <li th:inline="text">Details: [[${data.details}]]</li>
+            <li th:inline="text">Name: [[${data.name}]]</li>
+            <li th:inline="text">Domain: [[${data.domain}]]</li>
+            <li th:inline="text">Breach Date: [[${breachDate}]]</li>
+            <li th:inline="text">Date Added: [[${addedDate}]]</li>
+            <li th:inline="text">Date Modified: [[${data.modifiedDate}]]</li>
+            <li th:inline="text">PwnCount: [[${data.pwnCount}]]</li>
+            <li th:inline="text">Description: [[${data.description}]]</li>
+            <li >Data Classes:</li>
+                <th:block th:each="class,iter : ${data.dataClasses}">
+                    <ul>
+                        <li th:inline="text">[[${class}]]</li>
+                    </ul>
+                </th:block>
+            <li th:inline="text">Verified: [[${data.verified}]]</li>
+            <li th:inline="text">Fabricated: [[${data.fabricated}]]</li>
+            <li th:inline="text">Sensitive: [[${data.sensitive}]]</li>
+            <li th:inline="text">Active: [[${data.active}]]</li>
+            <li th:inline="text">Retired: [[${data.retired}]]</li>
+            <li th:inline="text">Spam List: [[${data.spamList}]]</li>
+            <li th:inline="text">Logo Type: [[${data.logoType}]]</li>
         </ul>
-        <br/>
     </th:block>
-</ol>
-<input type="button" value="Back to Search" onclick="location.href='/hacked-emails/'"/>
+<input type="button" value="Back to Search" onclick="location.href='/leaked-emails'"/>
 </body>
 </html>
