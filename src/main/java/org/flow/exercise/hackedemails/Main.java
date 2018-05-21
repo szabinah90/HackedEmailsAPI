@@ -11,6 +11,7 @@ public class Main {
         ElasticClusterConnector elasticClusterConnector = new ElasticClusterConnector();
         MyUtilities myUtilities = new MyUtilities();
 
+        /*
         String response = myURLConnection.getResponse("szabinahazi@gmail.com");
         System.out.println(response);
 
@@ -19,6 +20,6 @@ public class Main {
         String stringResponse = myUtilities.responseObjectToMappingString(pwnResponse);
 
         elasticClusterConnector.uploadingDocuments(stringResponse, "szabinahazi@gmail.com");
-
+        */
     }
 }

@@ -33,7 +33,7 @@ public class HackedEmailsDAO {
     }
 
 
-    public PwnResponse checkEmail(String email) {
+    public PwnResponse checkEmail(String email) throws IOException {
 
         ElasticClusterConnector elasticClusterConnector = new ElasticClusterConnector();
         MyURLConnection myURLConnection = new MyURLConnection();

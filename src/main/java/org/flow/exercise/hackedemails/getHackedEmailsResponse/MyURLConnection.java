@@ -13,7 +13,7 @@ public class MyURLConnection {
 
     private final String url = "https://haveibeenpwned.com/api/v2/breachedaccount/";
 
-    public String getResponse(String email) {
+    public String getResponse(String email) throws IOException {
         URLConnection connection = null;
         InputStream response = null;
 
@@ -22,8 +22,6 @@ public class MyURLConnection {
             connection.addRequestProperty("User-Agent", "Leaked-Emails-Checker-Java");
             response = connection.getInputStream();
         } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
             e.printStackTrace();
         }
 

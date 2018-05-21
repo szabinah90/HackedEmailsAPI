@@ -7,6 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 @Controller
 @RequestMapping(path = "/leaked-emails")
 public class MainController {
@@ -25,7 +28,17 @@ public class MainController {
 
     @PostMapping
     public String checkEmail(@ModelAttribute EmailObject emailObject, Model model) {
-        PwnResponse object = hackedEmailsDAO.checkEmail(emailObject.getAddress());
+        PwnResponse object = null;
+        try {
+            object = hackedEmailsDAO.checkEmail(emailObject.getAddress());
+        } catch (IOException e) {
+            if (e instanceof FileNotFoundException) {
+                object = new PwnResponse();
+                return "notFound";
+            } else {
+                e.printStackTrace();
+            }
+        }
         model.addAttribute("pwnresponse", object);
         return "result";
     }
