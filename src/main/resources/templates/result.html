@@ -3,34 +3,96 @@
 <head>
     <title>E-mail checker</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/results.css}"/>
 </head>
 <body>
-<h1>Results:</h1>
-    <th:block th:each="data : ${pwnresponse.responseList}">
-        <ul>
-            <li th:inline="text">Title: [[${data.title}]]</li>
-            <li th:inline="text">Name: [[${data.name}]]</li>
-            <li th:inline="text">Domain: [[${data.domain}]]</li>
-            <li th:inline="text">Breach Date: [[${breachDate}]]</li>
-            <li th:inline="text">Date Added: [[${addedDate}]]</li>
-            <li th:inline="text">Date Modified: [[${data.modifiedDate}]]</li>
-            <li th:inline="text">PwnCount: [[${data.pwnCount}]]</li>
-            <li th:inline="text">Description: [[${data.description}]]</li>
-            <li >Data Classes:</li>
+<div class="jumbotron">
+    <h1 class="display-4">Your e-mail address has been leaked!</h1>
+    <p class="lead">See the result(s) below:</p>
+    <hr class="my-4">
+    <p>The results are uploaded to an ElasticSearch cluster for visualization.</p>
+</div>
+<th:block th:each="data : ${pwnresponse.responseList}">
+    <table class="darkTable">
+        <tr>
+            <td>Title</td>
+            <td th:inline="text">[[${data.title}]]</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td th:inline="text">[[${data.name}]]</td>
+        </tr>
+        <tr>
+            <td class="header">Domain</td>
+            <td th:inline="text">[[${data.domain}]]</td>
+        </tr>
+        <tr>
+            <td>Breach Date</td>
+            <td th:inline="text">[[${data.breachDate}]]</td>
+        </tr>
+        <tr>
+            <td>Date Added</td>
+            <td th:inline="text">[[${data.addedDate}]]</td>
+        </tr>
+        <tr>
+            <td>Date Modified</td>
+            <td th:inline="text">[[${data.modifiedDate}]]</td>
+        </tr>
+        <tr>
+            <td>PwnCount</td>
+            <td th:inline="text">[[${data.pwnCount}]]</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td th:inline="text">[[${data.description}]]</td>
+        </tr>
+        <tr>
+            <td>Data Classes</td>
+            <td>
                 <th:block th:each="class,iter : ${data.dataClasses}">
                     <ul>
                         <li th:inline="text">[[${class}]]</li>
                     </ul>
                 </th:block>
-            <li th:inline="text">Verified: [[${data.verified}]]</li>
-            <li th:inline="text">Fabricated: [[${data.fabricated}]]</li>
-            <li th:inline="text">Sensitive: [[${data.sensitive}]]</li>
-            <li th:inline="text">Active: [[${data.active}]]</li>
-            <li th:inline="text">Retired: [[${data.retired}]]</li>
-            <li th:inline="text">Spam List: [[${data.spamList}]]</li>
-            <li th:inline="text">Logo Type: [[${data.logoType}]]</li>
-        </ul>
-    </th:block>
-<input type="button" value="Back to Search" onclick="location.href='/leaked-emails'"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Verified</td>
+            <td th:inline="text">[[${data.verified}]]</td>
+        </tr>
+        <tr>
+            <td>Fabricated</td>
+            <td th:inline="text">[[${data.fabricated}]]</td>
+        </tr>
+        <tr>
+            <td>Sensitive</td>
+            <td th:inline="text">[[${data.sensitive}]]</td>
+        </tr>
+        <tr>
+            <td>Active</td>
+            <td th:inline="text">[[${data.active}]]</td>
+        </tr>
+        <tr>
+            <td>Retired</td>
+            <td th:inline="text">[[${data.retired}]]</td>
+        </tr>
+        <tr>
+            <td>Spam List</td>
+            <td th:inline="text">[[${data.spamList}]]</td>
+        </tr>
+        <tr>
+            <td>Logo Type</td>
+            <td th:inline="text">[[${data.logoType}]]</td>
+        </tr>
+    </table>
+</th:block>
+<br />
+<button type="button" class="btn btn-danger" onclick="location.href='/leaked-emails'">Back to Search</button>
+<div class="footer">
+    <p>Házi Szabina / &copy; Flow Academy, 2018</p>
+</div>
 </body>
 </html>

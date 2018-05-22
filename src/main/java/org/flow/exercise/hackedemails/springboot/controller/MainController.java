@@ -33,7 +33,6 @@ public class MainController {
             object = hackedEmailsDAO.checkEmail(emailObject.getAddress());
         } catch (IOException e) {
             if (e instanceof FileNotFoundException) {
-                object = new PwnResponse();
                 return "notFound";
             } else {
                 e.printStackTrace();

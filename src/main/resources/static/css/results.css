@@ -1,0 +1,60 @@
+body {
+  background-color: black;
+}
+
+.jumbotron {
+  background: url('../img/red-matrix-code-loop_vkowm2ame__F0000.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+  color: whitesmoke;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+table.darkTable {
+  font-family: 'Roboto Condensed', sans-serif;
+  border: 2px solid  #790F1C;
+  border-radius: 15px;
+  background-color: black;
+  width: 97%;
+  height: 100%;
+  text-align: center;
+  border-collapse: separate;
+  border-spacing: 2.5px;
+  margin: 20px;
+}
+table.darkTable td {
+  border: 1px solid  #790F1C;
+  border-radius: 25px;
+  padding: 3px 2px;
+  vertical-align: middle;
+}
+table.darkTable tbody td {
+  font-size: 13px;
+  color: #E6E6E6;
+}
+table.darkTable tr:nth-child(even) {
+  background: #790F1C;
+}
+
+table.darkTable td {
+  font-size: 25px;
+}
+
+.btn-danger {
+background-color: #790F1C;
+border-color: #790F1C;
+margin-left: 20px;
+margin-bottom: 50px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: #790F1C;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-align: center;
+ }

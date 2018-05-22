@@ -1,0 +1,36 @@
+body {
+  background-color: black;
+}
+
+.jumbotron {
+  background: url('../img/red-matrix-code-loop_vkowm2ame__F0000.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+  color: #E6E6E6;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.not-found {
+  color: #E6E6E6;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 24px;
+  margin: 20px;
+}
+
+.btn-danger {
+  background-color: #790F1C;
+  border-color: #790F1C;
+  margin: 20px;
+  }
+  
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: #790F1C;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-align: center;
+ }
