@@ -1,6 +1,8 @@
 package org.flow.exercise.hackedemails.springboot.dao;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.elasticsearch.action.delete.DeleteRequest;
+import org.elasticsearch.action.delete.DeleteResponse;
 import org.elasticsearch.action.get.GetRequest;
 import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.update.UpdateRequest;
@@ -68,5 +70,30 @@ public class HackedEmailsDAO {
         }
 
         return modelObject;
+    }
+
+    public boolean deleteDocument(String email) {
+
+        GetRequest getRequest = new GetRequest(INDEX, TYPE, email);
+        boolean docExist = false;
+
+        try {
+            GetResponse getResponse = restHighLevelClient.get(getRequest);
+            docExist = getResponse.isExists();
+        } catch (java.io.IOException e){
+            e.getLocalizedMessage();
+        }
+
+        if (docExist) {
+            DeleteRequest deleteRequest = new DeleteRequest(INDEX, TYPE, email);
+
+            try {
+                DeleteResponse deleteResponse = restHighLevelClient.delete(deleteRequest);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return docExist;
     }
 }

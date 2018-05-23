@@ -41,4 +41,15 @@ public class MainController {
         model.addAttribute("pwnresponse", object);
         return "result";
     }
+
+    @PostMapping(path = "/delete")
+    public String deleteDocument(@ModelAttribute EmailObject emailObject, Model model) {
+        boolean checkDelete = hackedEmailsDAO.deleteDocument(emailObject.getAddress());
+
+        if (checkDelete) {
+            return "deleted";
+        } else {
+            return home(model);
+        }
+    }
 }

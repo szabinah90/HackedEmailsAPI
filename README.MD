@@ -20,3 +20,11 @@ Running:
 (5) Open localhost:8080/leaked-email in your browser.
 
 (6) Conduct search.
+
+![hacked1](https://user-images.githubusercontent.com/36161760/40450892-437ee03c-5edd-11e8-9ee1-1b7c8bafce71.png)
+
+![hacked2](https://user-images.githubusercontent.com/36161760/40450900-47230164-5edd-11e8-82fd-fc35f70cfd36.png)
+
+![hacked3](https://user-images.githubusercontent.com/36161760/40450906-4c392354-5edd-11e8-8d08-50e575221bda.png)
+
+![hacked4](https://user-images.githubusercontent.com/36161760/40450908-500fa048-5edd-11e8-9f30-32e537049576.png)

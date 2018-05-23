@@ -14,6 +14,7 @@
     <p class="lead">This program communicates with the Have I Been PWned API to gather relevant data.</p>
     <hr class="my-4">
     <p>The results then are uploaded to and ElasticSearch cluster for further processing.</p>
+    <p>If you don't want your e-mail address stored, please use the other field.</p>
 </div>
 <div class="form-container">
     <div class="form-content">
@@ -21,6 +22,11 @@
             <label>Enter an e-mail address: </label>
             <input type="email" th:field="*{address}" >
             <button type="submit" class="btn btn-danger">Submit</button>
+        </form>
+        <form method="post" th:action="@{/leaked-emails/delete}" action="#" th:object="${email}">
+            <label>Enter an e-mail address to delete: </label>
+            <input type="email" th:field="*{address}" >
+            <button type="submit" class="btn btn-danger">Delete</button>
         </form>
     </div>
 </div>
